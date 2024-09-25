@@ -1,0 +1,35 @@
+.menu {
+  display: flex;
+  flex: 1;
+  background-color: var(--bgSoft); /* Adjusted opacity */
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 100vh;
+  margin-top: 20px;
+}
+
+.content {
+  flex: 4;
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.main {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.side {
+  flex: 1;
+}

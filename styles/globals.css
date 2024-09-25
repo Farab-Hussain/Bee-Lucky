@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Layer */
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* Chart Colors */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Font Face */
+@font-face {
+  font-family: "Evil Empire";
+  src: url("/fonts/evil-empire/evil-empire.otf");
+}
+
+/* Custom Colors */
+@layer base {
+  :root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray: #ffffff45;
+    --color-primary: #ffc107;
+    --color-secondary: #101010;
+    --color-dashboard: #7e909a;
+    --color-box: #10101075;
+    --color-black-secondary: #1a1a1a;
+
+    /* Text Colors */
+    --color-text-primary: #101010;
+    --color-text-secondary: #ffc107;
+    --color-text-white: #ffffff;
+
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --text: white;
+    --textSoft: #b7bac1;
+
+    /* Button Colors */
+    --color-add: #ffc107;
+    --color-view: #008080;
+    --color-delete: #f0544f;
+    --color-pagination: #a9a9a9;
+  }
+
+  /* Body */
+  body {
+    @apply font-normal not-italic bg-[color:var(--color-secondary)] text-[color:var(--color-text-white)];
+    font-family: "Rajdhani", sans-serif;
+  }
+
+  /* Auth */
+  .auth {
+    @apply flex flex-col items-center justify-between md:items-start bg-[color:var(--color-secondary)] w-full lg:w-2/5 px-6 md:px-8 lg:px-14 py-16 text-sm bg-no-repeat;
+    background-image: url("/images/wave.png");
+    background-position: 110% 115%;
+  }
+
+  .auth-button {
+    @apply py-4 px-8 bg-[color:var(--color-primary)] text-[color:var(--color-text-primary)] font-bold text-lg leading-none rounded-md bg-no-repeat;
+    background-image: url("/images/buttons/wave.png"),
+      url("/images/buttons/wavert.png");
+    background-position: left center, right center;
+  }
+
+  .auth-form {
+    @apply flex flex-col gap-4 my-9 w-full;
+    width: 100%;
+  }
+
+  .auth-input-container {
+    @apply flex flex-col gap-2;
+  }
+
+  .auth-form-title {
+    @apply font-bold text-4xl mb-4;
+  }
+
+  .auth-input {
+    @apply border border-[color:var(--color-gray)] bg-transparent text-[color:var(--color-gray)] py-4 rounded-md focus:text-[color:var(--color-text-white)];
+  }
+
+  .auth-link {
+    @apply text-[color:var(--color-primary)] underline;
+  }
+
+  .auth-checkbox {
+    @apply appearance-none h-6 w-6 border border-gray-300 rounded-full checked:bg-[color:var(--color-primary)] checked:border-transparent focus:outline-none transition duration-200;
+  }
+
+  /* Navigation */
+  .nav-button {
+    @apply text-[color:var(--color-text-primary)] font-bold text-lg leading-none bg-[color:var(--color-primary)] p-2;
+  }
+
+  .nav-button-border {
+    @apply py-1 px-4 border-2 border-dashed border-[color:var(--color-secondary)];
+  }
+
+  /* Provider */
+  .provider-button {
+    @apply py-4 px-8 border border-[color:var(--color-gray)] text-[color:var(--color-text-white)] font-bold text-lg leading-none rounded-md flex-grow flex justify-between;
+  }
+
+  /* Container */
+  .containerr {
+    @apply flex-1 flex-col flex gap-2;
+  }
+
+  /* Input */
+  .input {
+    @apply border border-[color:var(--color-gray)] bg-transparent text-[color:var(--color-gray)] py-4 rounded-md focus:text-[color:var(--color-text-white)] px-5;
+  }
+
+  /* Error */
+  .error {
+    @apply text-red-600 font-medium;
+  }
+
+  /* Sidebar */
+  .side-bar {
+    @apply w-72 h-screen flex flex-col p-4 bg-[color:var(--color-black-secondary)] rounded-xl;
+  }
+
+  /* Header */
+  .header {
+    @apply flex items-center justify-between py-2 bg-[color:var(--color-secondary)] main-layout;
+  }
+
+  /* Welcome Tour */
+  .welcome-tour {
+    @apply hidden flex-1 bg-[color:var(--color-primary)] lg:flex bg-no-repeat relative overflow-hidden;
+    background-image: url("/images/welcome-tour/wave.png");
+    background-position: 105% top;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .main-layout {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .font-evil {
+    font-family: "Evil Empire", sans-serif;
+  }
+
+  .rajdhani-light {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .rajdhani-regular {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .rajdhani-semibold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .rajdhani-bold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+}
